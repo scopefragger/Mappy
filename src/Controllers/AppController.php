@@ -3,7 +3,7 @@
 namespace scopefragger\mappy\Controllers;
 
 use App\Http\Controllers\Controller;
-use Scopefragger\Mappy\Models\Urls;
+use scopefragger\mappy\Models\Urls;
 use Illuminate\Http\Request;
 
 class AppController extends Controller
