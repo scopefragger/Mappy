@@ -1,10 +1,10 @@
 {
-  "name": "Scopefragger/Mappy",
+  "name": "Scopefragger/mappy",
   "description": "",
   "type": "library",
   "autoload": {
     "psr-4": {
-      "Scopefragger\\Mappy\\": "src/"
+      "Scopefragger\\mappy\\": "src/"
     }
   },
   "authors": [
