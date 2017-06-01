@@ -1,6 +1,6 @@
 <?php
 
-namespace Scopefragger\Mappy\Controllers;
+namespace scopefragger\mappy\Controllers;
 
 use App\Http\Controllers\Controller;
 use Scopefragger\Mappy\Models\Urls;
