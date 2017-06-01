@@ -14,4 +14,4 @@
 use Illuminate\Support\Facades\Route;
 use Scopefragger\Commander\CommanderServiceProvider;
 
-Route::get('/sitemap.xml', 'Scopefragger\Mappy\Controllers\AppController@index');
+Route::get('/sitemap.xml', 'Scopefragger\Mappy\Controllers\AppController@output');

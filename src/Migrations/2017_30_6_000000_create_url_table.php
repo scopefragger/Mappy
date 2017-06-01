@@ -14,9 +14,10 @@ class CreateUrlTable extends Migration
     public function up()
     {
         Schema::create('urls', function (Blueprint $table) {
-            $table->uuid('id');
-            $table->string('url');
+            $table->increments('id');
+            $table->string('url')->default('/');
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 }
