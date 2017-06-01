@@ -11,7 +11,4 @@
 |
 */
 
-use Illuminate\Support\Facades\Route;
-use Scopefragger\Commander\CommanderServiceProvider;
-
-Route::get('/sitemap.xml', 'Scopefragger\Mappy\Controllers\AppController@output');
+Route::get('/sitemap.xml', 'scopefragger\mappy\Controllers\AppController@output');
