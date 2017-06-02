@@ -14,6 +14,7 @@ class AppController extends Controller
         $current = \Request::getRequestUri();
         $url = Urls::firstOrCreate(['url' => $current]);
         $url->url = $current;
+        $strip = config('Mappy.strip');
         $url->save();
     }
 
