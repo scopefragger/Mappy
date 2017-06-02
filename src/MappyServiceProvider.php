@@ -27,6 +27,10 @@ class MappyServiceProvider extends ServiceProvider
             Artisan::call('migrate');
         }
 
+        $this->publishes([
+            __DIR__.'Config/config.php' => config_path('mappy.php'),
+        ]);
+
         $mappy = new AppController();
         $mappy->index();
     }
