@@ -31,6 +31,7 @@ class MappyServiceProvider extends ServiceProvider
             __DIR__.'Config/config.php' => config_path('mappy.php'),
         ]);
 
+
         $mappy = new AppController();
         $mappy->index();
     }
