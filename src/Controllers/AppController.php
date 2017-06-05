@@ -58,14 +58,14 @@ class AppController extends Controller
      */
     public function constructUrl()
     {
-        dd(status());
-
         $url = str_replace($this->strip, '', $this->currentUrl);
         $prePost = explode('?', $url);
         $url = $prePost[0];
-        foreach ($this->blacklist as $key => $row) {
-            if (strpos($url, $row) >= -1) {
-                return true;
+        if (!empty($this->blacklist)) {
+            foreach ($this->blacklist as $key => $row) {
+                if (strpos($url, $row) >= -1) {
+                    return true;
+                }
             }
         }
         return $url;
@@ -83,10 +83,13 @@ class AppController extends Controller
         $urls = Urls::all();
         $output = "";
         $domain = config('mappy.domain');
-        foreach ($urls as $row) {
-            $output .= "    <url>\n    <loc>" . $domain . ($row->url) . "</loc>\n</url>\n";
+        if (!empty($urls)) {
+            foreach ($urls as $row) {
+                $output .= "    <url>\n    <loc>" . $domain . ($row->url) . "</loc>\n</url>\n";
+            }
+            $output = $this->wrapper($output);
+
         }
-        $output = $this->wrapper($output);
         return $output;
     }
 
