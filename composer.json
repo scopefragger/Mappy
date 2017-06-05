@@ -13,6 +13,7 @@
       "email": "mark@arcade247.co.uk"
     }
   ],
+  "version": "1.0.0",
   "minimum-stability": "stable",
   "require": {}
 }
