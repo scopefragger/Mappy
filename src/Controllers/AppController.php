@@ -6,12 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Response;
 use scopefragger\mappy\Models\Urls;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AppController extends Controller
 {
 
     protected $strip = '';
     protected $enabled = '';
+    protected $disableAuthed = '';
     protected $blacklist = [];
     protected $currentUrl = '';
     protected $compleateUrl = '';
@@ -21,6 +23,7 @@ class AppController extends Controller
         $this->strip = config('mappy.strip');
         $this->blacklist = config('mappy.blacklist');
         $this->enabled = config('mappy.enabled');
+        $this->disableAuthed = config('mappy.disabled_authed');
         $this->currentUrl = \Request::getRequestUri();
         $this->compleateUrl = '';
     }
@@ -38,6 +41,13 @@ class AppController extends Controller
         /** Catch the plugin being disabled */
         if ($this->enabled == false) {
             return false;
+        }
+
+        /** Catch the plugin being disabled for logged in users */
+        if (!empty($this->disableAuthed) && $this->disableAuthed == true) {
+            if (Auth::check() == true) {
+                return false;
+            }
         }
 
         $url = $this->constructUrl();

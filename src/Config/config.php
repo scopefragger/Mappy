@@ -48,6 +48,21 @@ return [
     'strip' => '',
 
     /*
+   |--------------------------------------------------------------------------
+   | Disable Logged in users
+   |--------------------------------------------------------------------------
+   |
+   | Usefull for disabling the plugin for users who are logged in,  can protect
+   | routes that may be to complicated for the blacklist rules. When enabled
+   | Usess who are logged in with not generate new urls in the sitemap
+   | Accepts ( Bool ) : true | false
+
+   */
+
+    'disabled_authed' => false,
+
+
+    /*
     |--------------------------------------------------------------------------
     | Domain
     |--------------------------------------------------------------------------
