@@ -78,7 +78,7 @@ class AppController extends Controller
         $prePost = explode('?', $url);
         $url = $prePost[0];
         if (!empty($this->blacklist)) {
-            foreach ($this->blacklist as $key => $row) {
+            foreach ($this->blacklist as $row) {
                 if (strpos($url, $row) >= -1) {
                     return true;
                 }
