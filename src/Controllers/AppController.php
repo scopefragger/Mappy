@@ -34,6 +34,12 @@ class AppController extends Controller
      */
     public function index()
     {
+
+        /** Catch the plugin being disabled */
+        if ($this->enabled == false) {
+            return false;
+        }
+
         $url = $this->constructUrl();
         $this->saveUrl($url);
     }
