@@ -8,7 +8,7 @@ use scopefragger\mappy\Controllers\AppController;
 
 class MappyMiddleware
 {
-    public function handle($request, Closure $next, $guard = null)
+    public function handle($request, Closure $next)
     {
         $mappy = new AppController();
         $mappy->index();

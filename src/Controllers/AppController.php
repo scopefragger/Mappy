@@ -87,12 +87,18 @@ class AppController extends Controller
         return $url;
     }
 
+    /**
+     * saveUrl()
+     * -------------------------------
+     * Saves the cleaned url to the DB
+     */
     public function saveUrl($url)
     {
         $urls = Urls::firstOrCreate(['url' => $url]);
         $urls->url = $url;
         $urls->save();
     }
+
 
     public function construct()
     {
