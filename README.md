@@ -16,6 +16,12 @@ The site map will be generated at http://yourdomain.com/sitemap.xml
     ```bash
     scopefragger\mappy\MappyServiceProvider::class
     ```
+    
+- Add the following to any middlware you wish to be tracked ( App/Http/Kernel.php ),  Typicaly you want this to be your web group
+
+    ```bash
+    \scopefragger\mappy\Middleware\MappyMiddleware::class
+    ```
 
 - For this package,  no facade is required
 
