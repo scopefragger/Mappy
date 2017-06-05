@@ -22,6 +22,13 @@ The site map will be generated at http://yourdomain.com/sitemap.xml
     ```bash
     \scopefragger\mappy\Middleware\MappyMiddleware::class
     ```
+    
+- You must then publish a copy ofthe config to your application ( run the following ! ) a new config file ``` config/mappy.php``` wil be created
+    ```bash
+    php artisan vendor:publish --tag=public --force
+    ```
+
+
 
 - For this package,  no facade is required
 
