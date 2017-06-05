@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/27102c8cbcf542c2aa1b7a969ffa6db3)](https://www.codacy.com/app/m-jones/Mappy?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=scopefragger/Mappy&amp;utm_campaign=Badge_Grade)
 # Mappy - Laravel Site Map Generator
 Mappy is a PHP 5.6 + library for Laravel 5+ that generates a sitemap in the background while users utilise the site
 
