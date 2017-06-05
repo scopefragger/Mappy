@@ -58,6 +58,8 @@ class AppController extends Controller
      */
     public function constructUrl()
     {
+        dd(status());
+
         $url = str_replace($this->strip, '', $this->currentUrl);
         $prePost = explode('?', $url);
         $url = $prePost[0];
