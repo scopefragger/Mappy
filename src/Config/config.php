@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'enabled' => true,
+    'enabled' => env(MAPPY_ENABLED, true),
 
     /*
     |--------------------------------------------------------------------------
@@ -28,10 +28,10 @@ return [
     |
     */
 
-    'blacklist' => [
+    'blacklist' => env(MAPPY_BLACKLIST, [
         '/admin',
         '/my-account'
-    ],
+    ]),
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'strip' => '',
+    'strip' => env(MAPPY_STRIP, ''),
 
     /*
    |--------------------------------------------------------------------------
@@ -59,7 +59,7 @@ return [
 
    */
 
-    'disabled_authed' => false,
+    'disabled_authed' => env(MAPPY_DISABLED_AUTHED, false),
 
 
     /*
@@ -74,6 +74,6 @@ return [
     |
     */
 
-    'domain' => 'http://example.com',
+    'domain' => env(MAPPY_DOMAIN, 'http://example.com'),
 
 ];
