@@ -7,7 +7,7 @@ use App\DripEmailer;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
-class MappyCommands extends Command
+class PurgeCommand extends Command
 {
     /**
      * The name and signature of the console command.

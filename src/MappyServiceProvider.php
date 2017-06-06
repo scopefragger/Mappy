@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use scopefragger\mappy\Commands\MappyCommands;
+use scopefragger\mappy\Commands\PurgeCommand;
 use scopefragger\mappy\Controllers\AppController;
 
 class MappyServiceProvider extends ServiceProvider
@@ -19,7 +19,7 @@ class MappyServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/Migrations');
         if ($this->app->runningInConsole()) {
             $this->commands([
-                MappyCommands::Class
+                PurgeCommand::Class
             ]);
         }
 
