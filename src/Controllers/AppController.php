@@ -1,10 +1,10 @@
 <?php
 
-namespace scopefragger\mappy\Controllers;
+namespace Scopefragger\Mappy\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Response;
-use scopefragger\mappy\Models\Urls;
+use Scopefragger\Mappy\Models\Urls;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

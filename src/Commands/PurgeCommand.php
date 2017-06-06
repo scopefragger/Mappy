@@ -1,6 +1,6 @@
 <?php
 
-namespace scopefragger\mappy\Commands;
+namespace Scopefragger\Mappy\Commands;
 
 use App\User;
 use App\DripEmailer;

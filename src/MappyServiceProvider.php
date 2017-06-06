@@ -1,6 +1,6 @@
 <?php
 
-namespace scopefragger\mappy;
+namespace Scopefragger\Mappy;
 
 
 use Illuminate\Support\Facades\Artisan;
@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use scopefragger\mappy\Commands\PurgeCommand;
-use scopefragger\mappy\Controllers\AppController;
+use Scopefragger\Mappy\Commands\PurgeCommand;
+use Scopefragger\Mappy\Controllers\AppController;
 
 class MappyServiceProvider extends ServiceProvider
 {

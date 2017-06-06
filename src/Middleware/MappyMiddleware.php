@@ -1,10 +1,10 @@
 <?php
 
-namespace scopefragger\mappy\Middleware;
+namespace Scopefragger\Mappy\Middleware;
 
 
 use Closure;
-use scopefragger\mappy\Controllers\AppController;
+use Scopefragger\Mappy\Controllers\AppController;
 
 class MappyMiddleware
 {

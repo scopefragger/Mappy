@@ -18,13 +18,13 @@ The site map will be generated at http://yourdomain.com/sitemap.xml
 - Add the following to your config/app.php
 
     ```bash
-    scopefragger\mappy\MappyServiceProvider::class
+    Scopefragger\Mappy\MappyServiceProvider::class
     ```
     
 - Add the following to any middlware you wish to be tracked ( App/Http/Kernel.php ),  Typicaly you want this to be your web group
 
     ```bash
-    \scopefragger\mappy\Middleware\MappyMiddleware::class
+    \Scopefragger\Mappy\Middleware\MappyMiddleware::class
     ```
     
 - You must then publish a copy ofthe config to your application ( run the following ! ) a new config file ``` config/mappy.php``` wil be created

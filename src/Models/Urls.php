@@ -1,6 +1,6 @@
 <?php
 
-namespace scopefragger\mappy\Models;
+namespace Scopefragger\Mappy\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
