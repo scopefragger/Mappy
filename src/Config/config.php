@@ -61,19 +61,4 @@ return [
 
     'disabled_authed' => env(MAPPY_DISABLED_AUTHED, false),
 
-
-    /*
-    |--------------------------------------------------------------------------
-    | Domain
-    |--------------------------------------------------------------------------
-    |
-    | The domain you wish to be recorded and used when generating the .XML
-    | like `Strip` this is usefull for when your running in a dev or staging
-    | enviroment
-    | Accepts ( String ) : ""
-    |
-    */
-
-    'domain' => env(MAPPY_DOMAIN, 'http://example.com'),
-
 ];

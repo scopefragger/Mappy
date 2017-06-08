@@ -8,16 +8,46 @@ use Scopefragger\Mappy\Models\Urls;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Class AppController
+ * @package Scopefragger\Mappy\Controllers
+ */
 class AppController extends Controller
 {
 
+    /**
+     * @var string
+     */
     protected $strip = '';
+
+    /**
+     * @var string
+     */
     protected $enabled = '';
+
+    /**
+     * @var string
+     */
     protected $disableAuthed = '';
+
+    /**
+     * @var array
+     */
     protected $blacklist = [];
+
+    /**
+     * @var string
+     */
     protected $currentUrl = '';
+
+    /**
+     * @var string
+     */
     protected $compleateUrl = '';
 
+    /**
+     * AppController constructor.
+     */
     public function __construct()
     {
         $this->strip = config('mappy.strip');
@@ -29,15 +59,10 @@ class AppController extends Controller
     }
 
     /**
-     * index();
-     * -------------------------------
-     * Core function ran on __boot();
-     * Collates the URL based on the path provided by Laravel
-     * Cleans URL based on rules provided in the config file
+     * @return bool
      */
-    public function index()
+    public function validate()
     {
-
         /** Catch the plugin being disabled */
         if ($this->enabled == false) {
             return false;
@@ -49,13 +74,10 @@ class AppController extends Controller
                 return false;
             }
         }
-
-        $url = $this->constructUrl();
-        $this->saveUrl($url);
     }
 
     /**
-     * output();
+     * Outputs XML
      * -------------------------------
      * Outputs a structured,  formatted XML page based on
      * the URL's save in the database
@@ -66,14 +88,19 @@ class AppController extends Controller
     }
 
     /**
-     * constructUrl()
-     * -------------------------------
-     * Constructs the for the index(); function
-     * Utilises the rules as defined in th config.php
-     * @return String/Bool $url
+     * Constructs URL for saving
+     *
+     * Runs the url against the users specified config rules,  cleans it up
+     * and prepares it, and then compleates by saving the url into the DB
+     *
+     * @return void
      */
     public function constructUrl()
     {
+        if (!$this->validate()) {
+            return;
+        }
+
         $url = str_replace($this->strip, '', $this->currentUrl);
         $prePost = explode('?', $url);
         $url = $prePost[0];
@@ -84,13 +111,17 @@ class AppController extends Controller
                 }
             }
         }
-        return $url;
+        $this->saveUrl($url);
     }
 
+
     /**
-     * saveUrl()
-     * -------------------------------
-     * Saves the cleaned url to the DB
+     * Saves URL to the DB
+     *
+     * Saves the cleaned URL into the DB utilising the first or
+     * create method,  preventing duplicate entry's
+     *
+     * @return void
      */
     public function saveUrl($url)
     {
@@ -100,11 +131,14 @@ class AppController extends Controller
     }
 
 
+    /**
+     * @return string
+     */
     public function construct()
     {
         $urls = Urls::all();
         $output = "";
-        $domain = config('mappy.domain');
+        $domain = url('');
         if (!empty($urls)) {
             foreach ($urls as $row) {
                 $output .= "    <url>\n    <loc>" . $domain . ($row->url) . "</loc>\n</url>\n";
@@ -115,6 +149,10 @@ class AppController extends Controller
         return $output;
     }
 
+    /**
+     * @param $input
+     * @return mixed
+     */
     public function wrapper($input)
     {
         $new = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
