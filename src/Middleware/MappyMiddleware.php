@@ -2,13 +2,13 @@
 namespace Scopefragger\Mappy\Middleware;
 
 use Closure;
-use Scopefragger\Mappy\Controllers\AppController;
+use Scopefragger\Mappy\Services\MappyService;
 
 class MappyMiddleware
 {
     public function handle($request, Closure $next)
     {
-        $mappy = new AppController();
+        $mappy = new MappyService();
         $mappy->constructUrl();
         return $next($request);
     }

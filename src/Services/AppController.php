@@ -1,6 +1,6 @@
 <?php
 
-namespace Scopefragger\Mappy\Controllers;
+namespace Scopefragger\Mappy\Services;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Response;
@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
  * Class AppController
  * @package Scopefragger\Mappy\Controllers
  */
-class AppController extends Controller
+class MappyService extends Controller
 {
 
     /**
@@ -61,7 +61,7 @@ class AppController extends Controller
     /**
      * @return bool
      */
-    public function validate()
+    public function validation()
     {
         /** Catch the plugin being disabled */
         if ($this->enabled == false) {
@@ -97,7 +97,7 @@ class AppController extends Controller
      */
     public function constructUrl()
     {
-        if (!$this->validate()) {
+        if (!$this->validation()) {
             return;
         }
 

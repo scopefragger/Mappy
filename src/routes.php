@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('/sitemap.xml', 'Scopefragger\Mappy\Controllers\AppController@output');
+Route::get('/sitemap.xml', 'Scopefragger\Mappy\Controllers\MappyController@sitemap');
