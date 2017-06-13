@@ -8,6 +8,17 @@ use Illuminate\Support\ServiceProvider;
 use Scopefragger\Mappy\Commands\PurgeCommand;
 use Scopefragger\Mappy\Controllers\AppController;
 
+/**
+ * Class MappyServiceProvider
+ *
+ * Binds required resources to the application
+ * - Routes
+ * - Migrations
+ * - Commands
+ * - Config file
+ *
+ * @package Scopefragger\Mappy
+ */
 class MappyServiceProvider extends ServiceProvider
 {
     public function boot()
@@ -18,10 +29,6 @@ class MappyServiceProvider extends ServiceProvider
             $this->commands([
                 PurgeCommand::Class
             ]);
-        }
-
-        if (!Schema::hasTable('mytable')) {
-            Artisan::call('migrate');
         }
 
         $this->publishes([

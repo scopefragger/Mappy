@@ -31,7 +31,7 @@ The site map will be generated at http://yourdomain.com/sitemap.xml
     ```bash
     php artisan vendor:publish --tag=mappy --force
     ```
-
+- Finaly,  run migrations to build the `mappy_urls` table
 
 
 - For this package,  no facade is required

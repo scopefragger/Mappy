@@ -7,6 +7,14 @@ use App\DripEmailer;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
+/**
+ * Class PurgeCommand
+ *
+ * Truncates the entire `mappy_urls` table when
+ * `php artisan mappy:purge` is ran via command line
+ *
+ * @package Scopefragger\Mappy\Commands
+ */
 class PurgeCommand extends Command
 {
     /**
@@ -21,7 +29,7 @@ class PurgeCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Purges the URL Table';
+    protected $description = 'Purges the mappy_urls Table';
 
     /**
      * Execute the console command.
@@ -30,6 +38,6 @@ class PurgeCommand extends Command
      */
     public function handle()
     {
-        DB::table('urls')->truncate();
+        DB::table('mappy_urls')->truncate();
     }
 }

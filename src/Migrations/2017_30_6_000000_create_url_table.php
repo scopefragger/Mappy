@@ -4,6 +4,12 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+/**
+ * Class CreateUrlTable
+ *
+ * Standrd migration file for laravel
+ * Creates the `url` table with soft deletes and one field,  `url`
+ */
 class CreateUrlTable extends Migration
 {
     /**
